@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import Loader from './components/Loader';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 4000);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence mode='wait'>
+      {showLoader ? (
+        <div className='overflow-hidden'>
+          <Loader key='loader' />
+        </div>
+      ) : (
+        <motion.div
+          key='main-content'
+          className='max-w-[1600px] mx-auto h-screen px-6 flex flex-col justify-between overflow-hidden'>
+          <Header />
+          <Home />
+          <Footer />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
