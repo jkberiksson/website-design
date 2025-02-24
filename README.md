@@ -1,9 +1,17 @@
-# Website Design
+# Animation Practice Website
 
-Small application of a potential website design!
+A small project focused on practicing animation skills through creative website design.
 
-## Technologies Used
+## Features
 
-- **React**: A JavaScript library for building user interfaces.
-- **Framer Motion**: A library for animations and transitions.
-- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Smooth Animations:** Engaging transitions and interactive animations throughout the site.
+- **Modern UI Design:** A clean, minimalistic layout to highlight motion effects.
+
+## Tech Stack
+
+- **Frontend:**
+  - React
+  - Tailwind CSS
+
+- **Animations:**
+  - Framer Motion (for animations and transitions)
